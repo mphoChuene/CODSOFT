@@ -2,6 +2,7 @@ import {
   KeyboardArrowLeftOutlined,
   KeyboardArrowRightOutlined,
 } from "@mui/icons-material";
+import { useState } from "react";
 import styled from "styled-components";
 
 const Container = styled.div`
@@ -10,6 +11,7 @@ const Container = styled.div`
     display; flex;
     position: relative;
     // background-color: blue; 
+    overflow:hidden;
 `;
 const Arrow = styled.div`
   width: 50px;
@@ -21,28 +23,31 @@ const Arrow = styled.div`
   justify-content: center;
   position: absolute;
   top: 0;
-  //   left: 10px;
   bottom: 0;
   left: ${(props) => props.direction === "left" && "10px"};
   right: ${(props) => props.direction === "right" && "10px"};
   margin: auto;
   cursor: pointer;
   opacity: 0.6;
+  z-index: 2;
 `;
 
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  transform: translateX(-100vw);
 `;
 
 const Slide = styled.div`
-  display: flex;
-  align-items: center;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: ${(props) => props.bg};
 `;
 const ImageContainer = styled.div`
-  flex: 1;
   height: 100%;
+  flex: 1;
 `;
 
 const Image = styled.img`
@@ -51,11 +56,13 @@ const Image = styled.img`
 
 const InfoContainer = styled.div`
   flex: 1;
-  padding: 50pxl;
+  padding: 24vh;
+//   background-color: red
 `;
 
 const Title = styled.h1`
   font-size: 70px;
+  width:100vh;
 `;
 const Description = styled.p`
   margin: 50px 0px;
@@ -70,14 +77,34 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+
 const Slider = () => {
+
+    const [slideIndex, setSlideIndex]=useState(0) 
+const handleClick = (direction) => {};
+
   return (
     <Container>
-      <Arrow direction="left">
+      <Arrow direction="left" onClick={() => handleClick("left")}>
         <KeyboardArrowLeftOutlined />
       </Arrow>
       <Wrapper>
-        <Slide>
+        <Slide bg="#fcf1ed">
+          <ImageContainer>
+            {" "}
+            <Image src="https://images.unsplash.com/photo-1700688001306-66fb877b3bd0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D" />
+          </ImageContainer>
+          <InfoContainer>
+            <Title>December Sale!</Title>
+            <Description>
+              {" "}
+              Do not compromise on style this Dezember! The first 100 customers
+              will recieve 50% off on their purchase
+            </Description>
+            <Button>Show Now</Button>
+          </InfoContainer>
+        </Slide>
+        <Slide bg="#f5fafd">
           <ImageContainer>
             {" "}
             <Image src="https://images.unsplash.com/photo-1702082326071-60b2dce42559?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -86,13 +113,29 @@ const Slider = () => {
             <Title>December Sale!</Title>
             <Description>
               {" "}
-              Do not compromise on style this Dezember!
+              Do not compromise on style this Dezember! The first 100 customers
+              will recieve 50% off on their purchase
+            </Description>
+            <Button>Shop Now</Button>
+          </InfoContainer>
+        </Slide>
+        <Slide bg="#f5fafd">
+          <ImageContainer>
+            {" "}
+            <Image src="https://images.unsplash.com/photo-1702082326071-60b2dce42559?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+          </ImageContainer>
+          <InfoContainer>
+            <Title>December Sale!</Title>
+            <Description>
+              {" "}
+              Do not compromise on style this Dezember! The first 100 customers
+              will recieve 50% off on their purchase
             </Description>
             <Button>Shop Now</Button>
           </InfoContainer>
         </Slide>
       </Wrapper>
-      <Arrow direction="right">
+      <Arrow direction="right" onClick={() => handleClick("right")}>
         <KeyboardArrowRightOutlined />
       </Arrow>
     </Container>
