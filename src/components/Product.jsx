@@ -9,31 +9,36 @@ const Container = styled.div`
   flex: 1;
   margin: 15px;
   // min-width: 200px;
-  height: 350px;
-  display: flex;
-  flex-wrap:wrap;
+  // height: 350px;
+  // display: flex;
+  // flex-direction: column;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
   background-color: yellow;
 `;
 
-const Circle = styled.div`
-  display: flex;
-  flex-direction: row;
-  background-color:red;
-`;
 const Image = styled.img`
   height: 20vh;
   object-fit: cover;
 `;
-const Info = styled.div``;
+const Info = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+`;
 
-const Icon = styled.div``;
+const Wrapper = styled.div`
+  background-color: green;
+`;
+
+const Icon = styled.div`
+  margin: 10px;
+`;
 
 const Product = ({ item }) => {
   return (
     <Container>
-      <Circle>
+      <Wrapper>
         <Image src={item.img} />
         <Info>
           <Icon>
@@ -46,7 +51,7 @@ const Product = ({ item }) => {
             <FavoriteBorderOutlined />
           </Icon>
         </Info>
-      </Circle>
+      </Wrapper>
     </Container>
   );
 };
