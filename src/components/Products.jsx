@@ -6,8 +6,8 @@ const Container = styled.div`
   padding: 2px;
   display: flex;
   flex-wrap: wrap; 
-  justify-content: space-around;
-  background-color: blue;
+  // justify-content: space-around;
+  background-color:whitesmoke;
 `;
 
 const Products = () => {

@@ -8,17 +8,18 @@ import styled from "styled-components";
 const Container = styled.div`
   flex: 1;
   margin: 15px;
-  // min-width: 200px;
-  // height: 350px;
-  // display: flex;
+  // min-width: 350px;
+  height: 350px;
+  display: flex;
   // flex-direction: column;
   align-items: center;
-  // justify-content: center;
-  background-color: yellow;
+  justify-content: center;
+  // background-color: lightgrey;
 `;
 
 const Image = styled.img`
-  height: 20vh;
+  height: 30vh;
+  width: 90%;
   object-fit: cover;
 `;
 const Info = styled.div`
@@ -28,11 +29,22 @@ const Info = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background-color: green;
+  // background-color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-width: 350px;
 `;
 
 const Icon = styled.div`
   margin: 10px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  &:hover {
+    background-color: transparent;
+    transform: scale(1.2);
+  }
 `;
 
 const Product = ({ item }) => {
