@@ -34,7 +34,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  min-width: 350px;
+  min-width: 400px;
 `;
 
 const Icon = styled.div`

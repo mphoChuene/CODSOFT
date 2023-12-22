@@ -1,4 +1,11 @@
-import { Facebook, Instagram, Pinterest, Twitter } from "@mui/icons-material";
+import {
+  Facebook,
+  Instagram,
+  Phone,
+  Pinterest,
+  Room,
+  Twitter,
+} from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 
@@ -41,11 +48,23 @@ const Description = styled.p`
   margin: 20px 0px;
 `;
 
-const Title = styled.h3``;
+const Title = styled.h3`
+  margin-bottom: 30px;
+`;
 
-const List = styled.ul``;
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+`;
 
-const ListItem = styled.li``;
+const ListItem = styled.li`
+  width: 50%;
+  margin-bottom: 10px;
+`;
+const ContactItem = styled.div``;
 
 const Footer = () => {
   return (
@@ -76,8 +95,33 @@ const Footer = () => {
           </SocialIcon>
         </SocialContainer>
       </Left>
-      <Center></Center>
-      <Right></Right>
+      <Center>
+        <Title>Useful Links</Title>
+        <List>
+          <ListItem>Home</ListItem>
+          <ListItem>Cart</ListItem>
+          <ListItem>Man's Fashion</ListItem>
+          <ListItem>Woman's Fashion</ListItem>
+          <ListItem>Accessories</ListItem>
+          <ListItem>My Account</ListItem>
+          <ListItem>Order Tracking</ListItem>
+          <ListItem>Wish List</ListItem>
+        </List>
+      </Center>
+      <Right>
+        <Title>Contact</Title>
+        <ContactItem>
+          <Room style={{ marginRight: "15px" }} />
+          22 helen Joseph, South Gate, Johannesburg
+        </ContactItem>
+        <ContactItem>
+          <Phone style={{ marginRight: "15px" }} />
+          +27 65 2433 454
+        </ContactItem>
+        <ContactItem style={{ marginLeft: "40px" }}>
+          Developed with ❤️ by Mpho Chuene
+        </ContactItem>
+      </Right>
     </Container>
   );
 };
