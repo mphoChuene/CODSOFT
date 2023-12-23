@@ -1,14 +1,15 @@
-import './App.css'
-import Home from './pages/Home'
+import "./App.css";
+import ProductList from "./components/ProductList";
+import Home from "./pages/Home";
 
 function App() {
-
-
   return (
     <>
-   <Home/>
+      {/* <Home/>
+       */}
+      <ProductList />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

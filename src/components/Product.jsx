@@ -13,12 +13,16 @@ const Container = styled.div`
   display: flex;
   // flex-direction: column;
   align-items: center;
+  cursor: pointer;
   justify-content: center;
-  // background-color: lightgrey;
+  transition: all ease 0.5s;
+  &:hover {
+    background-color: lightgrey;
+  }
 `;
 
 const Image = styled.img`
-  height: 30vh;
+  height: 25vh;
   width: 90%;
   object-fit: cover;
 `;
