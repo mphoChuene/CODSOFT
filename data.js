@@ -85,3 +85,26 @@ export const popularProducts = [
     price: 100,
   },
 ];
+
+export const names = [
+  {
+    name: "Mpho",
+    surname: "Chuene",
+    id: 1,
+  },
+  {
+    name: "Shaun",
+    surname: "Malwandla",
+    id: 2,
+  },
+  {
+    name: "Ristar",
+    surname: "Boiketlo",
+    id: 3,
+  },
+  {
+    name: "Dlozi",
+    surname: "Mthethwa",
+    id: 4,
+  },
+];
